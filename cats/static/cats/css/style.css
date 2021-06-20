@@ -22,15 +22,7 @@
     font-size: 25px;
 }
 
-.galeria {
-    font-family: "open sans";
-}
 
-.galeria h1 {
-    text-align: center;
-    margin: 20px 0 15px 0;
-    font-weight: 300;
-}
 
 .contenedor-imagenes {
     display: flex;

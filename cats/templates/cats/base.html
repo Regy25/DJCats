@@ -21,9 +21,9 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                    <a href="index.html"><img class="logo_full" src="{% static 'cats/images/logo_full.png' %}"
+                    <a href="{% url 'home' %}"><img class="logo_full" src="{% static 'cats/images/logo_full.png' %}"
                             alt="logo_full"></a>
-                    <a href="index.html"><img class="logo_small" src="../../static/cats/images/logo_small.png"
+                    <a href="{% url 'home' %}"><img class="logo_small" src="{% static 'cats/images/logo_small.png' %}' "
                             alt="logo_small"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -33,7 +33,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/economia.html">Indicadores Economicos</a>
@@ -46,12 +46,12 @@
                 </div>
             </nav>
         </header>
+        {% block contenido %}
+        {% endblock %}
         <!-- footer -->
         <footer class="footer">
             <p>Contacto : +56 9 9799 3773</p>
         </footer>
-        {% block contenido %}
-        {% endblock %}
         <!-- Popper -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
             integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
