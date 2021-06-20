@@ -1,0 +1,43 @@
+{% extends 'cats/base.html' %}
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+{% block contenido %}
+<!-- Carrusel de imagenes -->
+<aside class="aside aside-1">
+    <div id="carouselExampleControls" class="carousel slide slider-horizontal" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'cats/images/Toby.png' %}" class="carrusel" alt="Toby_carousel">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'cats/images/Alex.png' %}" class="carrusel" alt="Alex_carousel">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'cats/images/Bear.png' %}" class="carrusel" alt="bear_carousel">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</aside>
+<!-- Introduccion gatitos Ascii -->
+<aside class="aside aside-2">Cats for text, es una organización dedicada a darle un hogar a todos los
+    gatitos hechos en textos abandonados en foros y chats.
+    <br> Tú también puedes copiar a tu clipboard un gatito en ASCII o un lindo ":3".
+</aside>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

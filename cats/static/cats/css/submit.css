@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.navbar {
+    background-color: #5b8a72;
+    font-family: "open sans";
+}
+
+.submit{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 20px;
+
+}
+
+.logo_full {
+    height: 90px;
+}
+
+
+.logo_small {
+    height: 90px;
+}
+
+#Cates{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+label {
+    font-size: 30px;
+}
+
+select {
+    font-size: 30px;
+    position: relative;
+}
+
+#submit-form {
+    text-align: center;
+    font-size: 20px;
+    padding-left: 50%;
+    padding-right: 50%;
+}
+
+#nombre_gato, #historia_gato, #gato {
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 25px;
+}
+
+.container {
+    background-color: #bdbdbd;
+    max-width: 100%;
+    padding: 0px;
+}
+
+footer {
+    background-color: #5b8a72;
+    height: 40px;
+}
+
+footer p {
+    text-align: right;
+    font-family: "open sans";
+    font-size: 20px;
+    margin: 15px;
+}
+#gato_label,#historia_label, #nombre_label{
+    font-weight: bold;
+}
+
+@media screen and (max-width:800px) {
+    /* celular */
+    header {
+        order: 1;
+        text-align: center;
+    }
+    .footer {
+        order: 4;
+    }
+    .logo_full {
+        display: none;
+    }
+    label {
+        font-size: 15px;
+    }
+    #submit-form {
+        font-size: 20px;
+    }
+    select {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width:1086px) {
+    /* tablet */
+    header {
+        order: 1;
+        text-align: center;
+    }
+    .footer {
+        order: 4;
+    }
+    .logo_small {
+        display: none;
+    }
+    label {
+        font-size: 30px;
+    }
+
+    #submit-form {
+        font-size: 20px;
+    }
+    select {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width:1087px) {
+    /* escritorio */
+    .logo_small {
+        display: none;
+    }
+    select {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:280px) {
+    /* fold */
+    .navi {
+        display: none;
+    }
+    label {
+        font-size: 15px;
+    }
+    #submit-form {
+        font-size: 20px;
+    }
+    select {
+        font-size: 20px;
+    }
+}

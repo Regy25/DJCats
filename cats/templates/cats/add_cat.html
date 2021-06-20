@@ -13,6 +13,7 @@
 <body>
     <div class="container">
         <h1>Agregar Gato</h1>
+        <p>Formato de ingreso: Escribir "Gato:" y presionar enter antes de enviar al gato</p>
         <form method="POST">
             {% csrf_token %} {{ form.as_table }}
             <button type="submit">GRABAR</button>

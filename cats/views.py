@@ -49,3 +49,6 @@ def editar_cat(request, id_cat):
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "cats/editar_cat.html", {'form': form})
+
+def home(request):
+    return render(request, "cats/home.html")
