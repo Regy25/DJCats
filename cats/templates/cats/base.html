@@ -11,7 +11,7 @@
     {% load static %}
     {% block css %}
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'cats/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cats/css/base.css' %}">
     <title>Cats For Text</title>
 </head>
 
@@ -23,7 +23,7 @@
                 <div class="container-fluid">
                     <a href="{% url 'home' %}"><img class="logo_full" src="{% static 'cats/images/logo_full.png' %}"
                             alt="logo_full"></a>
-                    <a href="{% url 'home' %}"><img class="logo_small" src="{% static 'cats/images/logo_small.png' %}' "
+                    <a href="{% url 'home' %}"><img class="logo_small" src="{% static 'cats/images/logo_small.png' %}"
                             alt="logo_small"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
