@@ -15,6 +15,6 @@ class CatsForm(forms.ModelForm):
 
         widgets = {
             'name_cat': forms.TextInput(attrs={'class': 'form-control'}),
-            'ascii_cat': forms.TextInput(attrs={'class': 'form-control'}),
-            'desc_cat': forms.TextInput(attrs={'class': 'form-control'}),
+            'ascii_cat': forms.Textarea(attrs={'class': 'form-control'}),
+            'desc_cat': forms.Textarea(attrs={'class': 'form-control'}),
         }
