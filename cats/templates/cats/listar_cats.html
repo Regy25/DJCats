@@ -1,24 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Listar cats</title>
-  </head>
+{% extends 'cats/base.html' %}
+{% load static %}
 
-  <body>
+{% block css %}
+<link rel="stylesheet" href="{% static 'cats/css/listar_cats.css' %}">
+{% endblock %}
+
+{% block contenido %}
+    
     <h2>Lista de Gatos</h2>
 
     {% for c in cats %}
-        <div>
-            <p> Id: {{ c.id }} </p>
-            <p> Nombre: {{ c.name_cat }}</p>
-            <pre>{{ c.ascii_cat}} </pre>          
-            <p> Descripcion {{ c.desc_cat }} </p>
+        <div class="item">
+          <div class="d1">
+              <p class="name">{{ c.name_cat }}</p> 
+          </div>
+          <div class="row">
+            <div class="col-lg-3" name="imagen">
+                <img src="media/{{c.imagen_cat}}" class="cats" alt="cat">
+            </div>
+            <div class="col-lg-9">
+                <p class="desc">{{ c.desc_cat }}</p>
+            </div>
+          </div>
+          <div class="d3">
+            <button class="btn btn-primary" id="btn-copiar">Copiar</button>
+            <pre hidden id="gato">{{c.ascii_cat}} </pre>
+          </div>         
         </div>
         <br>
     {% endfor %}
 
-  </body>
-</html>
+    {% block js %}
+        <script src="{% static 'cats/js/btn-copiar' %}">
+    {% endblock %}
+{% endblock %}

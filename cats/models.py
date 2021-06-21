@@ -10,4 +10,4 @@ class Cats(models.Model):
         imagen_cat = models.ImageField(upload_to="cats", null=True)
 
         def __str__(self):
-            return self.name_cat
+            return self.ascii_cat
