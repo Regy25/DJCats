@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cats
 from .forms import CatsForm
 
@@ -21,17 +21,19 @@ def listar_cats(request):
 #     return render(request, "cats/add_cat.html", {'form': form})
 
 def add_cat(request):
+    
     data={
-        'form':CatsForm()
+        'form' : CatsForm()
     }
-    if request.method == "POST":   
-        form= CatsForm(request.POST, files=request.FILES)
-        if form.is_valid():
-            form.save()
-            data["mensaje"]="guardado correctamente"
+    
+    if request.method == 'POST':
+        formulario = CatsForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "guardado correctamente"
         else:
-            data["form"]=form
-    return render(request,"cats/add_cat.html", data) 
+            data["form"] = formulario
+    return render(request, "cats/add_cat.html", data) 
 
 def borrar_cat(request, id_cat):
     # Recuperamos la instancia de los CATS y la borramos
@@ -42,26 +44,20 @@ def borrar_cat(request, id_cat):
     return redirect('listar_cats')
 
 def editar_cat(request, id_cat):
-    # Recuperamos la instancia de los CATS
-    instancia = Cats.objects.get(id=id_cat)
-
-    # Creamos el formulario con los datos de la instancia
-    form = CatsForm(instance=instancia)
-
-    # Comprobamos si se ha enviado el formulario
-    if request.method == "POST":
-        # Actualizamos el formulario con los datos recibidos
-        form = CatsForm(request.POST, instance=instancia)
-        # Si el formulario es válido...
-        if form.is_valid():
-            # Guardamos el formulario pero sin confirmarlo,
-            # así conseguiremos una instancia para manipular antes de grabar
-            instancia = form.save(commit=False)
-            # Podemos guardar cuando queramos
-            instancia.save()
-
-    # Si llegamos al final renderizamos el formulario
-    return render(request, "cats/editar_cat.html", {'form': form})
+    cat = get_object_or_404(Cats, id=id_cat)
+    
+    data = {
+        'form' : CatsForm(instance=cat)
+    }
+    
+    if request.method == 'POST':
+        formulario = CatsForm(data=request.POST, instance=cat, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect (to="listar_cats")
+        data["form"] = formulario
+         
+    return render(request, "cats/editar_cat.html", data)
 
 def home(request):
     return render(request, "cats/home.html")

@@ -10,10 +10,11 @@
         <h1>Agregar Gato</h1>
         <p>Formato de ingreso: </p> 
         <p>Escribir "Gato:" y presionar enter antes de enviar al gato</p>
-        <form method="POST" id=add>
+        <form method="POST" id=add enctype="multipart/form-data">
             {% csrf_token %} {{ form.as_table }}
             <br>
             
-            <button type="submit">DAR EN ADOPCION</button>
+            <button type="submit" class="btn btn-primary">DAR EN ADOPCION</button>
         </form>
+        {{mensaje}}
 {% endblock%}
