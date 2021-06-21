@@ -2,15 +2,18 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'cats/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'cats/css/add_cat.css' %}">
 {% endblock %}
 
 {% block contenido %}
 
         <h1>Agregar Gato</h1>
-        <p>Formato de ingreso: Escribir "Gato:" y presionar enter antes de enviar al gato</p>
-        <form method="POST">
+        <p>Formato de ingreso: </p> 
+        <p>Escribir "Gato:" y presionar enter antes de enviar al gato</p>
+        <form method="POST" id=add>
             {% csrf_token %} {{ form.as_table }}
-            <button type="submit">GRABAR</button>
+            <br>
+            
+            <button type="submit">DAR EN ADOPCION</button>
         </form>
 {% endblock%}
