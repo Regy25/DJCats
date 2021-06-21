@@ -1,14 +1,22 @@
-$(document).ready(function () {
-    $("#btn-copiar").click(function () {
-            var gato = document.getElementById(gato).innerHTML;
 
-            function CopiadordeGatos(e) {
-                e.clipboardData.setData("text/html", gato);
-                e.clipboardData.setData("text/plain", gato);
-                e.preventDefault();
-            }
-            document.addEventListener("copy", CopiadordeGatos);
-            document.execCommand("copy");
-            document.removeEventListener("copy", CopiadordeGatos);
-    });
-});
+const copybtn = [...document.getElementsByClassName('copy-btn')]
+console.log(copybtn)
+
+
+let ultimo = null
+
+copybtn.forEach(btn=> btn.addEventListener('click', ()=>{
+    const id = btn.getAttribute('data-id')
+    var ascii = document.getElementById(id).innerHTML;
+    btn.textContent ='Copiado'
+
+    navigator.clipboard.writeText(ascii)
+
+    if (ultimo) {
+        ultimo.textContent = 'Copiar'
+
+    }
+    ultimo = btn
+
+}))
+
