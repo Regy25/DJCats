@@ -36,10 +36,10 @@
                                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/economia.html">Indicadores Economicos</a>
+                                <a class="nav-link" href="{% url 'listar_cats' %}">Galeria de Gatitos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/submit.html">Dar en Adopción</a>
+                                <a class="nav-link" href="{% url 'add_cat' %}">Dar en Adopción</a>
                             </li>
                         </ul>
                     </div>
