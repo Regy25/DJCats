@@ -9,16 +9,29 @@ def listar_cats(request):
     return render(request, "cats/listar_cats.html", {'cats': cats})
 
 # Create your views here.
+# def add_cat(request):
+#     if request.method == "POST":
+#         form = CatsForm(request.POST, files=request.FILES)
+#         if form.is_valid():
+#             model_instance = form.save(commit=False)
+#             model_instance.save()
+#             return redirect("/add_cat")
+#     else:
+#         form = CatsForm()
+#     return render(request, "cats/add_cat.html", {'form': form})
+
 def add_cat(request):
-    if request.method == "POST":
-        form = CatsForm(request.POST)
+    data={
+        'form':CatsForm()
+    }
+    if request.method == "POST":   
+        form= CatsForm(request.POST, files=request.FILES)
         if form.is_valid():
-            model_instance = form.save(commit=False)
-            model_instance.save()
-            return redirect("/add_cat")
-    else:
-        form = CatsForm()
-        return render(request, "cats/add_cat.html", {'form': form})
+            form.save()
+            data["mensaje"]="guardado correctamente"
+        else:
+            data["form"]=form
+    return render(request,"cats/add_cat.html", data) 
 
 def borrar_cat(request, id_cat):
     # Recuperamos la instancia de los CATS y la borramos

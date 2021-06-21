@@ -5,16 +5,18 @@ from .models import Cats
 class CatsForm(forms.ModelForm):
     class Meta:
         model = Cats
-        fields = ['name_cat', 'ascii_cat', 'desc_cat']
+        fields = ['name_cat', 'ascii_cat', 'desc_cat', 'imagen_cat']
 
         labels = {
             'name_cat': 'Nombre',
             'ascii_cat': 'Gato',
             'desc_cat': 'Descripcion',
+            'imagen_cat': 'Imagen',
         }
 
         widgets = {
             'name_cat': forms.TextInput(attrs={'class': 'form-control'}),
             'ascii_cat': forms.Textarea(attrs={'class': 'form-control'}),
             'desc_cat': forms.Textarea(attrs={'class': 'form-control'}),
+            'imagen_cat': forms.FileInput(attrs={'class': 'form-control'}),
         }
