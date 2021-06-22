@@ -21,12 +21,18 @@ h2{
 
 .desc{
     font-size: 30px;
+    text-align: justify;
 }
 
 .d3{
     text-align: center;
 }
 
-/* #imagen{
-    margin-left: 5%;
-} */
+@media screen and (max-width:280px) {
+
+    .desc{
+        font-size: 20px;
+        text-align: center;
+    }
+
+}
