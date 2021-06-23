@@ -7,7 +7,7 @@
 
 {% block contenido %}
 
-    <form method="POST" id=cat2 enctype="multipart/form-data">
+    <form method="POST" id="add" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
         <br>
@@ -16,3 +16,7 @@
 
 {% endblock %}
 
+{% block js %}
+<!-- Local JS -->
+<script src="{% static 'cats/js/validacion_l.js' %}"></script>
+{% endblock %}

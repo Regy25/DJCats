@@ -28,12 +28,10 @@
           </div>
           {% if user.is_authenticated %}
           <div class="d4" id="d4">
-            <button class="btn btn-primary">Editar</button>
-            <pre hidden id="{{c.id}}">{{c.id}}</pre>
+            <a class="btn btn-primary" href="{% url 'editar_cat' c.id%}">Editar</a>
           </div>
           <div class="d5">
-            <button class="btn btn-primary">Borrar</button>
-            <pre hidden id="{{c.id}}">{{c.id}}</pre>
+            <a class="btn btn-primary" href="{% url 'borrar_cat' c.id%}">Eliminar</a>
           </div>
           {% endif %}      
         </div>

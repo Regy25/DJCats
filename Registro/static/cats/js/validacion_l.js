@@ -14,9 +14,6 @@ $(document).ready(function(){
             desc_cat: {
                 required: true,
                 minlength: 20
-            },
-            imagen_cat: {
-                required: true,
             }
         },
 
@@ -33,9 +30,6 @@ $(document).ready(function(){
                 required: "Ingrese la descripcion del gatito",
                 minlength: "Ingrese minimo 20 caracteres"
             },
-            imagen_cat: {
-                required:"Ingrese una imagen del gatito", 
-            }
         },
         errorElement: 'div'
     });
