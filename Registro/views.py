@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Cats
 from .forms import CatsForm
+from django.contrib.auth import logout
 # Create your views here.
 
 def listar_cats(request):
@@ -71,3 +72,5 @@ def redir_home(request):
     return redirect('home')
 
 
+def logout_view(request):
+    logout(request)
