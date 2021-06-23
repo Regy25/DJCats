@@ -28,6 +28,15 @@ h2{
     text-align: center;
 }
 
+.d4{
+    text-align: center;
+    padding-top: 2px;
+}
+.d5{
+    text-align: center;
+    padding-top: 2px;
+}
+
 @media screen and (max-width:280px) {
 
     .desc{

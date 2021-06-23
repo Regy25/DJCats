@@ -25,7 +25,17 @@
           <div class="d3">
             <button class="btn btn-primary copy-btn" data-id={{c.id}}>Copiar</button>
             <pre hidden id="{{c.id}}">{{c.ascii_cat}} </pre>
-          </div>         
+          </div>
+          {% if user.is_authenticated %}
+          <div class="d4" id="d4">
+            <button class="btn btn-primary">Editar</button>
+            <pre hidden id="{{c.id}}">{{c.id}}</pre>
+          </div>
+          <div class="d5">
+            <button class="btn btn-primary">Borrar</button>
+            <pre hidden id="{{c.id}}">{{c.id}}</pre>
+          </div>
+          {% endif %}      
         </div>
         <br>
     {% endfor %}

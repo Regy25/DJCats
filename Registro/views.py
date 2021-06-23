@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Cats
 from .forms import CatsForm
 # Create your views here.
@@ -37,6 +38,7 @@ def add_cat(request):
             data["form"] = formulario
     return render(request, "cats/add_cat.html", data)
 
+@login_required(login_url='/admin/')
 def borrar_cat(request, id_cat):
     # Recuperamos la instancia de los CATS y la borramos
     instancia = Cats.objects.get(id=id_cat)
@@ -45,6 +47,7 @@ def borrar_cat(request, id_cat):
     # Después redireccionamos de nuevo a la lista
     return redirect('listar_cats')
 
+@login_required(login_url='/admin/')
 def editar_cat(request, id_cat):
     cat = get_object_or_404(Cats, id=id_cat)
     
