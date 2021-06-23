@@ -35,7 +35,7 @@ def add_cat(request):
             data["mensaje"] = "guardado correctamente"
         else:
             data["form"] = formulario
-    return render(request, "cats/add_cat.html", data) 
+    return render(request, "cats/add_cat.html", data)
 
 def borrar_cat(request, id_cat):
     # Recuperamos la instancia de los CATS y la borramos

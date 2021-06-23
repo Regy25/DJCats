@@ -14,12 +14,12 @@ class CatsForm(forms.ModelForm):
             'desc_cat': 'Descripcion',
             'imagen_cat': 'Imagen',
         }
-
         widgets = {
-            'name_cat': forms.TextInput(attrs={'class': 'form-control', 'id': 'name_f', 'placeholder': 'Ingrese el nombre del gatito',}),
-            'ascii_cat': forms.Textarea(attrs={'class': 'form-control', 'id': 'ascii_f', 'placeholder': 'Pegue aquí el gatito a donar'}),
-            'desc_cat': forms.Textarea(attrs={'class': 'form-control', 'id': 'desc_f', 'placeholder': 'Cuentenenos la historia del gatito'}),
-            'imagen_cat': forms.FileInput(attrs={'class': 'form-control', 'id': 'imagen_f', 'placeholder': 'Imagen del gatito'}),
+            
+            'name_cat': forms.TextInput(attrs={'class': 'form-control'}),
+            'ascii_cat': forms.Textarea(attrs={'class': 'form-control'}),
+            'desc_cat': forms.Textarea(attrs={'class': 'form-control'}),
+            'imagen_cat': forms.FileInput(attrs={'class': 'form-control'}),
         }
 
 

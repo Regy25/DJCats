@@ -1,3 +1,4 @@
+console.log("hola")
 $(document).ready(function(){
     $("#CatsForm").validate({
         rules: {
@@ -6,6 +7,13 @@ $(document).ready(function(){
                 minlength: 3
 
             },
+        },
+
+        messages:{
+            nombre_cat:{
+                required: "requerido",
+                minlength: "nombre corto"
+            }
         }
     });
 });
