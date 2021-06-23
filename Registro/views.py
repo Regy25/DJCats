@@ -1,3 +1,5 @@
+from django import forms
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cats
 from .forms import CatsForm
@@ -64,3 +66,5 @@ def home(request):
 
 def redir_home(request):
     return redirect('home')
+
+
