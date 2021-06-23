@@ -16,4 +16,6 @@ urlpatterns = [
     path('borrar_cat/<int:id_cat>', views.borrar_cat, name="borrar_cat"),
 
     path('home', views.home,  name="home"),
+    
+    path('', views.redir_home, name="redirect_home"),
 ]

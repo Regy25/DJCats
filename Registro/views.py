@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cats
 from .forms import CatsForm
-
+# Create your views here.
 
 def listar_cats(request):
     # queryset   ..... SELECT * FROM CATS
@@ -61,3 +61,6 @@ def editar_cat(request, id_cat):
 
 def home(request):
     return render(request, "cats/home.html")
+
+def redir_home(request):
+    return redirect('home')
