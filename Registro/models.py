@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Cats(models.Model):
         name_cat = models.CharField(max_length=30)
         ascii_cat = models.TextField()

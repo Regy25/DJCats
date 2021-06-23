@@ -1,22 +1,22 @@
 {% extends 'cats/base.html' %}
 {% load static %}
 
+<!-- linkeo al css local -->
 {% block css %}
 <link rel="stylesheet" href="{% static 'cats/css/editar_cat.css' %}">
 {% endblock %}
 
 {% block contenido %}
-
+<!-- formulario que revisa el archivo-->
     <form method="POST" id="add" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
         <br>
         <button type="submit" class="btn btn-primary">Editar</button>
     </form>
-
 {% endblock %}
 
 {% block js %}
 <!-- Local JS -->
-<script src="{% static 'cats/js/validacion_l.js' %}"></script>
+<script src="{% static 'cats/js/validacion_editar.js' %}"></script>
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'cats/base.html' %}
 {% load static %}
 
+<!--acceso al css local-->
 {% block css %}
 <link rel="stylesheet" href="{% static 'cats/css/listar_cats.css' %}">
 {% endblock %}
@@ -33,12 +34,13 @@
           <div class="d5">
             <a class="btn btn-primary" href="{% url 'borrar_cat' c.id%}">Eliminar</a>
           </div>
-          {% endif %}      
+          {% endif %}
         </div>
         <br>
     {% endfor %}
 {% endblock %}
 
+<!--acceso al JS local-->
 {% block js %}
     <script src="{% static 'cats/js/btn-copiar.js' %}"></script>
 {% endblock %}

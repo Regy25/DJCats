@@ -8,21 +8,8 @@ from django.contrib.auth import logout
 # Create your views here.
 
 def listar_cats(request):
-    # queryset   ..... SELECT * FROM CATS
     cats = Cats.objects.all()
     return render(request, "cats/listar_cats.html", {'cats': cats})
-
-# Create your views here.
-# def add_cat(request):
-#     if request.method == "POST":
-#         form = CatsForm(request.POST, files=request.FILES)
-#         if form.is_valid():
-#             model_instance = form.save(commit=False)
-#             model_instance.save()
-#             return redirect("/add_cat")
-#     else:
-#         form = CatsForm()
-#     return render(request, "cats/add_cat.html", {'form': form})
 
 def add_cat(request):
     
@@ -41,11 +28,8 @@ def add_cat(request):
 
 @login_required(login_url='/admin/')
 def borrar_cat(request, id_cat):
-    # Recuperamos la instancia de los CATS y la borramos
     instancia = Cats.objects.get(id=id_cat)
     instancia.delete()
-
-    # Después redireccionamos de nuevo a la lista
     return redirect('listar_cats')
 
 @login_required(login_url='/admin/')
@@ -62,7 +46,6 @@ def editar_cat(request, id_cat):
             formulario.save()
             return redirect (to="listar_cats")
         data["form"] = formulario
-         
     return render(request, "cats/editar_cat.html", data)
 
 def home(request):
@@ -74,3 +57,4 @@ def redir_home(request):
 
 def logout_view(request):
     logout(request)
+    return redirect('home')

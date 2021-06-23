@@ -15,7 +15,12 @@ urlpatterns = [
     # borrar un gato
     path('borrar_cat/<int:id_cat>', views.borrar_cat, name="borrar_cat"),
 
+    # pagina principal
     path('home', views.home,  name="home"),
     
+    # redirecciona a la pagina principal
     path('', views.redir_home, name="redirect_home"),
+
+    #este manda a la pagina principal cuando se presiona el logout
+    path('logout', views.logout_view, name="logout"),
 ]
