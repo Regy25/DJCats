@@ -1,5 +1,8 @@
 from django.urls import path, include
 from . import views
+from rest_framework.urlpatterns import format_suffix_patterns
+from Registro import views
+
 
 urlpatterns = [
 
@@ -24,3 +27,10 @@ urlpatterns = [
     #este manda a la pagina principal cuando se presiona el logout
     path('logout', views.logout_view, name="logout"),
 ]
+
+urlpatterns += [
+    path('api/', views.API_objects.as_view()),
+    path('api/<int:pk>/', views.API_objects_details.as_view()),
+]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

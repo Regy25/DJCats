@@ -5,6 +5,10 @@ from django.contrib.auth.decorators import login_required
 from .models import Cats
 from .forms import CatsForm
 from django.contrib.auth import logout
+# las importaciones para la API 
+from rest_framework import generics
+from .serializers import CatsSerializer
+
 # Create your views here.
 
 def listar_cats(request):
@@ -58,3 +62,10 @@ def redir_home(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+class API_objects(generics.ListCreateAPIView):
+    queryset = Cats.objects.all()
+    serializer_class = CatsSerializer
+    
+class API_objects_details(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Cats.objects.all()
+    serializer_class = CatsSerializer
