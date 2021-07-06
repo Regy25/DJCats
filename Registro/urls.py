@@ -2,7 +2,7 @@ from django.urls import path, include
 from . import views
 from rest_framework.urlpatterns import format_suffix_patterns
 from Registro import views
-
+from rest_framework.authtoken.views import obtain_auth_token  
 
 urlpatterns = [
 
@@ -29,8 +29,11 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+    #api
     path('cat/',  views.cat_collection , name='cat_collection'),
-    path('cat/<int:pk>/', views.cat_element ,name='cat_element')
+    path('cat/<int:pk>/', views.cat_element ,name='cat_element'),
+    #token
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
