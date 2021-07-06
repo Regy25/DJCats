@@ -29,8 +29,8 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('api/', views.API_objects.as_view()),
-    path('api/<int:pk>/', views.API_objects_details.as_view()),
+    path('cat/',  views.cat_collection , name='cat_collection'),
+    path('cat/<int:pk>/', views.cat_element ,name='cat_element')
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
